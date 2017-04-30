@@ -76,6 +76,11 @@ module.exports = function(env) {
           loaders: ['expose-loader?p2'],
         },
         {
+          test: /\.(ogg)$/,
+          loaders: ['file-loader?name=audio/[hash:12].[ext]'],
+          exclude: '/node_modules/',
+        },
+        {
           test: /\.css$/,
           use: extractCSS.extract({
             use: [
